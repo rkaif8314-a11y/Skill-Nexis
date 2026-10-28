@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Week 2 examples for background colors, fonts, Flexbox, Grid and hover effects.">
+  <title>Week 2 CSS Practice | Skill-Nexis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --ink: #20271f; --muted: #697267; --accent: #54734a; --paper: #f4f3ec; --card: #fffefa; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: "DM Sans", Arial, sans-serif; line-height: 1.6; }
+    header { padding: 4rem 1.25rem; background: #263526; color: white; text-align: center; }
+    header p { max-width: 620px; margin: 1rem auto 0; color: #d5ddce; }
+    h1, h2 { font-family: "Playfair Display", Georgia, serif; font-weight: 500; line-height: 1.15; }
+    h1 { margin: 0; font-size: clamp(2.4rem, 6vw, 4.4rem); }
+    h1 em { color: #c0d29c; }
+    .eyebrow { margin: 0 0 .75rem; color: #c0d29c; font-size: .72rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
+
+    /* Practice 2: Flexbox centers the section content on both axes. */
+    .practice-intro { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 260px; padding: 3rem 1.25rem; text-align: center; }
+    .practice-intro p { max-width: 600px; color: var(--muted); }
+    .actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: .75rem; margin-top: .75rem; }
+    .button { display: inline-flex; align-items: center; justify-content: center; padding: .75rem 1rem; border: 1px solid var(--accent); border-radius: 4px; background: var(--accent); color: white; font-size: .9rem; font-weight: 600; text-decoration: none; transition: transform 180ms ease, color 180ms ease, background 180ms ease; }
+    /* Practice 4: visible hover states for buttons and links. */
+    .button:hover { transform: translateY(-3px); background: #3e5b36; }
+    .button.secondary { background: transparent; color: var(--accent); }
+    .button.secondary:hover { background: #e5eadf; color: #2e4828; }
+    .text-link { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 4px; transition: color 180ms ease; }
+    .text-link:hover { color: #1f3a1c; }
+
+    .examples { max-width: 1180px; margin: 0 auto; padding: 0 1.25rem 5rem; }
+    .examples-heading { display: flex; align-items: end; justify-content: space-between; gap: 1rem; margin-bottom: 1.5rem; }
+    .examples-heading h2 { margin: 0; font-size: clamp(1.8rem, 3vw, 2.8rem); }
+    .examples-heading p { margin: 0; color: var(--muted); font-size: .8rem; }
+    /* Practice 3: three-column CSS Grid becomes two and then one column. */
+    .card-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+    .example-card { min-height: 190px; padding: 1.4rem; border: 1px solid #e3e3d9; background: var(--card); transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease; }
+    .example-card:hover { transform: translateY(-4px); border-color: #a8b79a; box-shadow: 0 14px 30px rgba(38, 53, 38, .08); }
+    .number { color: var(--accent); font-size: .72rem; font-weight: 700; letter-spacing: .15em; }
+    .example-card h3 { margin: 1.1rem 0 .45rem; font-family: "Playfair Display", Georgia, serif; font-size: 1.4rem; font-weight: 500; }
+    .example-card p { margin-bottom: 0; color: var(--muted); font-size: .92rem; }
+    footer { padding: 1.5rem 1.25rem; border-top: 1px solid #dedfd4; color: var(--muted); font-size: .75rem; text-align: center; }
+    @media (max-width: 760px) { .card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .examples-heading { align-items: flex-start; flex-direction: column; } }
+    @media (max-width: 500px) { .card-grid { grid-template-columns: 1fr; } header { padding-top: 3.2rem; padding-bottom: 3.2rem; } }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-duration: .01ms !important; } }
+  </style>
+</head>
+<body>
+  <header>
+    <p class="eyebrow">Skill-Nexis · Week 02</p>
+    <h1>CSS, with a little <em>character.</em></h1>
+    <p>Four small practice questions brought together in one page. Resize the browser and hover over the buttons and cards to see the styling in action.</p>
+  </header>
+
+  <main>
+    <section class="practice-intro" aria-labelledby="flexbox-heading">
+      <p class="eyebrow">PRACTICE 02 / FLEXBOX</p>
+      <h2 id="flexbox-heading">A centered moment</h2>
+      <p>This section uses Flexbox with <code>align-items: center</code> and <code>justify-content: center</code> to arrange content in the middle.</p>
+      <div class="actions">
+        <a class="button" href="interactive-image-gallery/index.html">Open image gallery ↗</a>
+        <a class="button secondary" href="#examples">View CSS examples ↓</a>
+      </div>
+    </section>
+
+    <section class="examples" id="examples" aria-labelledby="examples-heading">
+      <div class="examples-heading">
+        <div><p class="eyebrow">PRACTICE 03 / CSS GRID</p><h2 id="examples-heading">Three across, then adapt</h2></div>
+        <p>3 columns → 2 columns → 1 column</p>
+      </div>
+      <div class="card-grid">
+        <article class="example-card"><span class="number">01 / COLOR</span><h3>Quiet greens</h3><p>A custom background, text color and accent color are defined with CSS variables.</p></article>
+        <article class="example-card"><span class="number">02 / TYPE</span><h3>Two typefaces</h3><p>Headings use a serif font, while body copy uses a sans-serif font for contrast.</p></article>
+        <article class="example-card"><span class="number">03 / BOX MODEL</span><h3>Room to breathe</h3><p>Padding, margins, borders and <code>box-sizing: border-box</code> make spacing predictable.</p></article>
+        <article class="example-card"><span class="number">04 / GRID</span><h3>Responsive cards</h3><p>CSS Grid creates three equal columns and media queries adjust the layout on smaller screens.</p></article>
+        <article class="example-card"><span class="number">05 / HOVER</span><h3>Small movement</h3><p>Hover this card to see the lift, border color and soft shadow transition.</p></article>
+        <article class="example-card"><span class="number">06 / LINKS</span><h3>Clear actions</h3><p><a class="text-link" href="interactive-image-gallery/index.html">Explore the gallery page</a> to try the image hover and lightbox interactions.</p></article>
+      </div>
+    </section>
+  </main>
+  <footer>Week 2 CSS styling practice · HTML + CSS · 2026</footer>
+</body>
+</html>
