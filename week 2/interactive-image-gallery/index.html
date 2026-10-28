@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A responsive eight-photo gallery with hover animations and an accessible lightbox.">
+  <title>Lume Gallery | Skill-Nexis Week 2</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Lume Gallery home">
+      <span class="brand-mark" aria-hidden="true">L</span>
+      <span>LUME<span class="brand-light"> / GALLERY</span></span>
+    </a>
+    <a class="week-tag" href="#about">WEEK 02 <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="page-title">
+      <p class="eyebrow"><span class="eyebrow-line"></span> A LITTLE COLLECTION OF ELSEWHERE</p>
+      <h1 id="page-title">The world, <em>in frames.</em></h1>
+      <p class="hero-copy">Eight places. A thousand little details. Open a frame and take a closer look.</p>
+      <div class="hero-meta" aria-label="Gallery information">
+        <span><span class="live-dot" aria-hidden="true"></span> CURATED MOMENTS</span>
+        <span>08 PHOTOGRAPHS</span>
+      </div>
+    </section>
+
+    <section class="gallery-section" aria-labelledby="gallery-heading">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">THE COLLECTION / 001—008</p>
+          <h2 id="gallery-heading">Places to get lost in</h2>
+        </div>
+        <p class="interaction-hint"><span aria-hidden="true">↗</span> Select any image to explore</p>
+      </div>
+
+      <div class="gallery-grid" id="gallery-grid">
+        <button class="gallery-card" type="button" data-index="0" aria-label="Open photo: The quiet forest">
+          <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1000&q=85" alt="Sunlight filtering through a quiet green forest" loading="eager">
+          <span class="image-shade" aria-hidden="true"></span>
+          <span class="card-caption"><span class="card-number">01 / NATURE</span><span class="card-title">The quiet forest</span><span class="card-arrow" aria-hidden="true">↗</span></span>
+        </button>
+        <button class="gallery-card" type="button" data-index="1" aria-label="Open photo: Where mountains meet the sky">
+          <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=85" alt="Rugged mountain peaks rising above the clouds" loading="lazy">
+          <span class="image-shade" aria-hidden="true"></span>
+          <span class="card-caption"><span class="card-number">02 / LANDSCAPE</span><span class="card-title">Where mountains meet the sky</span><span class="card-arrow" aria-hidden="true">↗</span></span>
+        </button>
+        <button class="gallery-card" type="button" data-index="2" aria-label="Open photo: A softer kind of blue">
+          <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1200&q=85" alt="Ocean waves rolling toward a sunlit shore" loading="lazy">
+          <span class="image-shade" aria-hidden="true"></span>
+          <span class="card-caption"><span class="card-number">03 / OCEAN</span><span class="card-title">A softer kind of blue</span><span class="card-arrow" aria-hidden="true">↗</span></span>
+        </button>
+        <button class="gallery-card" type="button" data-index="3" aria-label="Open photo: The city wakes up">
+          <img src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1000&q=85" alt="City buildings and streets illuminated at dusk" loading="lazy">
+          <span class="image-shade" aria-hidden="true"></span>
+          <span class="card-caption"><span class="card-number">04 / CITY</span><span class="card-title">The city wakes up</span><span class="card-arrow" aria-hidden="true">↗</span></span>
+        </button>
+        <button class="gallery-card" type="button" data-index="4" aria-label="Open photo: Golden hour, somewhere">
+          <img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1000&q=85" alt="Golden sunlight resting on a calm field at sunrise" loading="lazy">
+          <span class="image-shade" aria-hidden="true"></span>
+          <span class="card-caption"><span class="card-number">05 / SUNLIGHT</span><span class="card-title">Golden hour, somewhere</span><span class="card-arrow" aria-hidden="true">↗</span></span>
+        </button>
+        <button class="gallery-card" type="button" data-index="5" aria-label="Open photo: A road into the unknown">
+          <img src="https://images.unsplash.com/photo-1464278533981-50106e6176b1?auto=format&fit=crop&w=1000&q=85" alt="A winding road through a mountain landscape" loading="lazy">
+          <span class="image-shade" aria-hidden="true"></span>
+          <span class="card-caption"><span class="card-number">06 / ADVENTURE</span><span class="card-title">A road into the unknown</span><span class="card-arrow" aria-hidden="true">↗</span></span>
+        </button>
+        <button class="gallery-card" type="button" data-index="6" aria-label="Open photo: A little more wild">
+          <img src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=1200&q=85" alt="Wild deer standing in a green woodland clearing" loading="lazy">
+          <span class="image-shade" aria-hidden="true"></span>
+          <span class="card-caption"><span class="card-number">07 / WILDLIFE</span><span class="card-title">A little more wild</span><span class="card-arrow" aria-hidden="true">↗</span></span>
+        </button>
+        <button class="gallery-card" type="button" data-index="7" aria-label="Open photo: The last light of day">
+          <img src="https://images.unsplash.com/photo-1472120435266-53107fd0c44a?auto=format&fit=crop&w=1000&q=85" alt="Warm evening light falling over a distant landscape" loading="lazy">
+          <span class="image-shade" aria-hidden="true"></span>
+          <span class="card-caption"><span class="card-number">08 / EVENING</span><span class="card-title">The last light of day</span><span class="card-arrow" aria-hidden="true">↗</span></span>
+        </button>
+      </div>
+      <p class="gallery-note">A small reminder to pause and look around.</p>
+    </section>
+
+    <section class="about-strip" id="about" aria-label="About this project">
+      <span class="about-symbol" aria-hidden="true">✳</span>
+      <p><strong>Built for Week 2</strong><br>HTML, CSS Grid, Flexbox, DOM events and JavaScript.</p>
+      <a href="../css-practice.html">Explore CSS practice <span aria-hidden="true">→</span></a>
+    </section>
+  </main>
+
+  <footer class="site-footer"><span>LUME / GALLERY</span><span>MADE FOR THE CURIOUS · 2026</span></footer>
+
+  <dialog class="lightbox" id="lightbox" aria-label="Expanded gallery photo">
+    <div class="lightbox-topbar">
+      <span class="lightbox-brand">LUME <span>/ FULL VIEW</span></span>
+      <span class="lightbox-count" id="lightbox-count" aria-live="polite">01 / 08</span>
+      <button class="icon-button close-button" id="close-lightbox" type="button" aria-label="Close image viewer">✕</button>
+    </div>
+    <div class="lightbox-stage">
+      <button class="icon-button nav-button" id="previous-image" type="button" aria-label="Previous image">←</button>
+      <figure class="lightbox-figure">
+        <img id="lightbox-image" src="" alt="">
+        <figcaption id="lightbox-caption"></figcaption>
+      </figure>
+      <button class="icon-button nav-button" id="next-image" type="button" aria-label="Next image">→</button>
+    </div>
+    <p class="lightbox-help">USE ← → TO BROWSE <span>·</span> ESC TO CLOSE</p>
+  </dialog>
+</body>
+</html>
